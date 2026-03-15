@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1>&#128176; Qu&#7843;n L&#253; Chi Ti&#234;u</h1>
+      <p class="subtitle">Theo d&#245;i thu chi c&#7911;a b&#7841;n</p>
+    </header>
+
+    <!-- BALANCE CARD -->
+    <div class="balance-card">
+      <p class="balance-label">T&#7893;ng S&#7889; D&#432;</p>
+      <h2 class="balance-amount" id="balance">0 &#273;</h2>
+      <div class="balance-row">
+        <div class="balance-item income">
+          <span class="bi-label">&#128200; Thu Nh&#7853;p</span>
+          <span class="bi-value" id="totalIncome">0 &#273;</span>
+        </div>
+        <div class="divider"></div>
+        <div class="balance-item expense">
+          <span class="bi-label">&#128201; Chi Ti&#234;u</span>
+          <span class="bi-value" id="totalExpense">0 &#273;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD TRANSACTION FORM -->
+    <div class="card">
+      <h3 class="card-title">Th&#234;m Giao D&#7883;ch</h3>
+      <form id="transactionForm">
+        <div class="form-group">
+          <label for="desc">M&#244; t&#7843;</label>
+          <input type="text" id="desc" placeholder="VD: &#258;n s&#225;ng, Ti&#7873;n l&#432;&#417;ng..." required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="amount">S&#7889; ti&#7873;n (&#273;)</label>
+            <input type="number" id="amount" placeholder="50000" min="1" required />
+          </div>
+          <div class="form-group">
+            <label for="type">Lo&#7841;i</label>
+            <select id="type">
+              <option value="income">&#128200; Thu nh&#7853;p</option>
+              <option value="expense">&#128201; Chi ti&#234;u</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-add">+ Th&#234;m Giao D&#7883;ch</button>
+      </form>
+    </div>
+
+    <!-- TRANSACTION HISTORY -->
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">L&#7883;ch S&#7917; Giao D&#7883;ch</h3>
+        <button class="btn-clear" onclick="clearAll()">X&#243;a T&#7845;t C&#7843;</button>
+      </div>
+      <ul class="transaction-list" id="transactionList">
+        <li class="empty-state">Ch&#432;a c&#243; giao d&#7883;ch n&#224;o.</li>
+      </ul>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
